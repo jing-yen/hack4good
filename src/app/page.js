@@ -1,9 +1,7 @@
 'use client';
-import Image from "next/image";
-import styles from "./page.module.css";
-import SignInPage from "./SignInPage";
+import SignInPage from "./pages/SignInPage";
 import { useState } from "react";
-import HomePage from "./HomePage";
+import HomePage from "./pages/HomePage";
 
 export default function Home() {
   const [signedIn, setSignedIn] = useState(false);
