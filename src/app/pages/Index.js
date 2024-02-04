@@ -33,12 +33,15 @@ export default function Index() {
     setPage(pageNumber);
   };
 
+  const sideDrawerWidth = isExpanded ? '20%' : '5%';
+  const mainContentWidth = `90%`;
+
   return (
     <Box sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Drawer
         variant="permanent"
         sx={{
-          width: isExpanded ? '20%' : '5%',
+          width: sideDrawerWidth,
           flexShrink: 0,
           ...(isExpanded && { transition: 'width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms' }),
         }}
@@ -86,6 +89,7 @@ export default function Index() {
           transform: isExpanded ? 'translateX(20%)' : 'translateX(5%)',
           transition: 'transform 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms',
           overflowX: 'visible',
+          width: mainContentWidth,
         }}
       >
         {page === 0 ? <HomePage /> : page === 1 ? <ActivitiesPage /> : page === 2 ? <BeneficiariesPage /> : page === 3 ? <VolunteersPage /> : <SettingsPage />}
