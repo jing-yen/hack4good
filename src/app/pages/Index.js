@@ -37,7 +37,7 @@ export default function Index() {
   const mainContentWidth = `90%`;
 
   return (
-    <Box sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Box sx={{ py: 0, px: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Drawer
         variant="permanent"
         sx={{
@@ -85,11 +85,14 @@ export default function Index() {
       </Drawer>
       <Box
         sx={{
+          py: 4,
+          px: 4,
           flexGrow: 1,
           transform: isExpanded ? 'translateX(20%)' : 'translateX(5%)',
           transition: 'transform 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms',
           overflowX: 'visible',
           width: mainContentWidth,
+          minHeight: '100vh', // Add this line to set minimum height to full viewport height
         }}
       >
         {page === 0 ? <HomePage /> : page === 1 ? <ActivitiesPage /> : page === 2 ? <BeneficiariesPage /> : page === 3 ? <VolunteersPage /> : <SettingsPage />}
